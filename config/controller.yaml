@@ -1,0 +1,46 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100 #Hz
+    use_sim_time: true
+
+    # register controllers to controller manager
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    state_feedback_controller:
+      type: state_feedback_controller/StateFeedbackController
+
+    pendulums_passive:
+      type: effort_controllers/JointGroupEffortController
+
+    all_fixed:
+      type: position_controllers/JointGroupPositionController
+
+state_feedback_controller:
+  ros__parameters:
+    command_interfaces:
+      - slider/effort
+    state_interfaces:
+      - slider/position
+      - joint1/position
+      - joint2/position
+      - joint3/position
+      - slider/velocity
+      - joint1/velocity
+      - joint2/velocity
+      - joint3/velocity
+
+pendulums_passive:
+  ros__parameters:
+    joints:
+      - joint1
+      - joint2
+      - joint3
+
+all_fixed:
+  ros__parameters:
+    joints:
+      - slider
+      - joint1
+      - joint2
+      - joint3

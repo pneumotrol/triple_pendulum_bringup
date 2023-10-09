@@ -29,6 +29,15 @@ state_feedback_controller:
       - joint1/velocity
       - joint2/velocity
       - joint3/velocity
+    state_feedback_gain: [
+      -10.0000000000467,
+      -186.244767214514,
+      555.798399611533,
+      -1164.14196339137,
+      -17.7130280207445,
+      -58.9624096246367,
+      -46.4016379830537,
+      -174.935030023700,]
 
 pendulums_passive:
   ros__parameters:
